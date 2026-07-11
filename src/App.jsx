@@ -116,6 +116,36 @@ function App() {
 
         </div>
       </section>
+      {/* STORY */}
+      <section className="story" id="story">
+        <div className="story-grid">
+          <div className="story-label">
+            <p className="mono">// THE STORY</p>
+          </div>
+          <div className="story-content">
+            <h2 className="story-title">Nobody Handed Us This.</h2>
+            <p className="story-text">
+              Selph Made was built the same way everything worth having gets built —
+              from scratch, on late nights, with no shortcuts and no cosigners.
+            </p>
+            <p className="story-text">
+              Every piece in this collection is a receipt. Proof that you can start
+              with nothing but your own name and turn it into something people wear
+              with pride. This isn't just clothing. It's documentation of the grind.
+            </p>
+            <p className="story-text gold-line">
+              If you're building your own name too — this was made for you.
+            </p>
+            <p className="mono story-sig">— SELPH MADE, EST. 2026</p>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <p className="mono">SELPH MADE™ — BUILT, NOT GIVEN.</p>
+        <p className="mono footer-fine">© 2026 SELPH MADE. ALL RIGHTS RESERVED.</p>
+      </footer>
 
     </div>
   )
