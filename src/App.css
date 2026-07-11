@@ -1,0 +1,258 @@
+/* ===== TICKER ===== */
+.ticker {
+  background: var(--ink);
+  color: var(--cream);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.ticker span {
+  display: inline-block;
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--cream);
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: -1px;
+  color: var(--ink);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.logo-mark {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-cart {
+  border: 1px solid var(--ink);
+  padding: 8px 16px;
+}
+
+.nav-cart:hover {
+  background: var(--ink);
+  color: var(--cream) !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 40px;
+  position: relative;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-tag {
+  font-size: 0.8rem;
+  color: var(--gray);
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 16vw, 13rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -4px;
+}
+
+.hero-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.hero-sub {
+  max-width: 380px;
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.btn-ink {
+  background: var(--ink);
+  color: var(--cream);
+  text-decoration: none;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  padding: 18px 34px;
+  transition: all 0.25s;
+}
+
+.btn-ink:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 700px) {
+  .navbar {
+    padding: 18px 20px;
+  }
+  .hero {
+    padding: 40px 20px;
+  }
+  .hero-title {
+    letter-spacing: -2px;
+  }
+}
+/* ===== SHOP ===== */
+.shop {
+  padding: 90px 40px;
+  border-top: 1px solid var(--line);
+}
+
+.shop-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.shop-title {
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.shop-count {
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 34px;
+}
+
+.product-img {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  aspect-ratio: 4 / 5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+}
+
+.product:hover .product-img {
+  border-color: var(--ink);
+}
+
+.product-code {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.7rem;
+  color: var(--gray);
+}
+
+.product-photo {
+  font-size: 0.7rem;
+  color: var(--gray);
+  letter-spacing: 2px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.product-info h3 {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.product-price {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.product-btn {
+  width: 100%;
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  padding: 13px 0;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.product-btn:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+/* shop mobile */
+@media (max-width: 700px) {
+  .shop {
+    padding: 60px 20px;
+  }
+}

@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --cream: #F2EFE7;
+  --paper: #E9E4D8;
+  --ink: #141414;
+  --gold: #B98A2F;
+  --line: rgba(20, 20, 20, 0.12);
+  --gray: #6E6A60;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Archivo', sans-serif;
+  text-transform: uppercase;
+}
+
+.mono {
+  font-family: 'Space Mono', monospace;
+}
