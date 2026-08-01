@@ -1,6 +1,37 @@
 import './App.css'
+import { useState } from 'react'
 
 function App() {
+  const [contact, setContact] = useState({ name: '', email: '', message: '' })
+  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
+
+  const updateContact = (field, value) => setContact({ ...contact, [field]: value })
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault()
+    if (sending) return
+    setSending(true)
+
+    try {
+      // TODO: replace with Selph Made's own Formspree endpoint (formspree.io/f/YOUR_ID)
+      await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          Name: contact.name,
+          Email: contact.email,
+          Message: contact.message,
+        }),
+      })
+    } catch (err) {
+      console.error('Contact form submission failed:', err)
+    }
+
+    setSending(false)
+    setSent(true)
+  }
+
   return (
     <div className="site">
 
@@ -15,6 +46,7 @@ function App() {
         <div className="nav-links">
           <a href="#shop">Shop</a>
           <a href="#story">The Story</a>
+          <a href="#contact">Contact</a>
           <a href="#shop" className="nav-cart mono">CART [0]</a>
         </div>
       </nav>
@@ -137,6 +169,53 @@ function App() {
               If you're building your own name too — this was made for you.
             </p>
             <p className="mono story-sig">— SELPH MADE, EST. 2026</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="contact" id="contact">
+        <div className="contact-grid">
+          <div className="contact-label">
+            <p className="mono">// GET IN TOUCH</p>
+          </div>
+          <div className="contact-content">
+            <h2 className="contact-title">Say Something.</h2>
+            <p className="contact-text">
+              Questions about a piece, wholesale, collabs, or just want to say what's up —
+              drop a line below and we'll get back to you.
+            </p>
+
+            {sent ? (
+              <p className="mono contact-success">MESSAGE RECEIVED — WE'LL BE IN TOUCH.</p>
+            ) : (
+              <form className="contact-form" onSubmit={handleContactSubmit}>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  required
+                  value={contact.name}
+                  onChange={(e) => updateContact('name', e.target.value)}
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={contact.email}
+                  onChange={(e) => updateContact('email', e.target.value)}
+                />
+                <textarea
+                  placeholder="Message"
+                  rows="5"
+                  required
+                  value={contact.message}
+                  onChange={(e) => updateContact('message', e.target.value)}
+                />
+                <button type="submit" className="btn-ink" disabled={sending}>
+                  {sending ? 'Sending...' : 'Send Message'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
