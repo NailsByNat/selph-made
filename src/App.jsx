@@ -14,8 +14,7 @@ function App() {
     setSending(true)
 
     try {
-      // TODO: replace with Selph Made's own Formspree endpoint (formspree.io/f/YOUR_ID)
-      await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      await fetch('https://formspree.io/f/mkodlqne', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
