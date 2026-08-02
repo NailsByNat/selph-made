@@ -5,6 +5,7 @@ function App() {
   const [contact, setContact] = useState({ name: '', email: '', message: '' })
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const updateContact = (field, value) => setContact({ ...contact, [field]: value })
 
@@ -41,14 +42,32 @@ function App() {
 
       {/* NAVBAR */}
       <nav className="navbar">
-        <a href="#top" className="logo">SELPH<span className="logo-mark">MADE™</span></a>
+        <a href="#top" className="logo" onClick={() => setMenuOpen(false)}>SELPH<span className="logo-mark">MADE™</span></a>
         <div className="nav-links">
           <a href="#shop">Shop</a>
           <a href="#story">The Story</a>
           <a href="#contact">Contact</a>
           <a href="#shop" className="nav-cart mono">CART [0]</a>
         </div>
+        <button
+          className={menuOpen ? 'hamburger open' : 'hamburger'}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
+
+      {menuOpen && (
+        <div className="mobile-menu">
+          <a href="#shop" onClick={() => setMenuOpen(false)}>Shop</a>
+          <a href="#story" onClick={() => setMenuOpen(false)}>The Story</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#shop" className="mono" onClick={() => setMenuOpen(false)}>CART [0]</a>
+        </div>
+      )}
 
       {/* HERO */}
       <header className="hero" id="top">
