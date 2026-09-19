@@ -96,6 +96,30 @@
   margin-bottom: 24px;
 }
 
+/* ===== GRAFFITI TAG (spray-paint accent) ===== */
+.graffiti-tag {
+  position: absolute;
+  top: 28px;
+  right: 40px;
+  font-family: 'Rubik Wet Paint', cursive;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--gold);
+  opacity: 0.55;
+  transform: rotate(-6deg);
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  .graffiti-tag {
+    top: 16px;
+    right: 20px;
+    font-size: 1.2rem;
+  }
+}
+
 .hero-title {
   font-size: clamp(4rem, 16vw, 13rem);
   font-weight: 900;
@@ -217,7 +241,7 @@
   align-items: baseline;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .shop-title {
@@ -229,6 +253,37 @@
 .shop-count {
   color: var(--gray);
   font-size: 0.8rem;
+}
+
+.shop-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--gray);
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.filter-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
 }
 
 .shop-grid {
@@ -309,6 +364,27 @@
 @media (max-width: 700px) {
   .shop {
     padding: 60px 20px;
+  }
+  .shop-filters {
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .product {
+    font-size: 0.9rem;
+  }
+  .product-img {
+    margin-bottom: 10px;
+  }
+  .product-info h3 {
+    font-size: 0.85rem;
+  }
+  .product-btn {
+    font-size: 0.65rem;
+    padding: 10px 0;
   }
 }
 /* ===== STORY ===== */

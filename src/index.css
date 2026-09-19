@@ -1,12 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&family=Rubik+Wet+Paint&display=swap');
 
+/*
+  CONCRETE WALL THEME
+  --cream and --ink are kept as variable names (used all over App.css),
+  but their values are now flipped: --cream = the dark background,
+  --ink = the light foreground/text. Every rule that used "background:
+  cream, text: ink" for a light theme now renders as a dark theme
+  automatically, no other file needed to change.
+*/
 :root {
-  --cream: #F2EFE7;
-  --paper: #E9E4D8;
-  --ink: #141414;
-  --gold: #B98A2F;
-  --line: rgba(20, 20, 20, 0.12);
-  --gray: #6E6A60;
+  --cream: #1C1C1A;
+  --paper: #242220;
+  --ink: #F2EFE7;
+  --gold: #C9A24A;
+  --line: rgba(242, 239, 231, 0.1);
+  --gray: #A39C8E;
 }
 * {
   margin: 0;
