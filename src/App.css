@@ -33,17 +33,49 @@
 }
 
 .logo {
-  font-family: 'Archivo', sans-serif;
-  font-weight: 900;
-  font-size: 1.4rem;
-  letter-spacing: -1px;
-  color: var(--ink);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  text-transform: uppercase;
+}
+
+.logo-img {
+  height: 26px;
+  width: auto;
+  /* logo art is black; invert so it shows light on the dark theme */
+  filter: invert(1) brightness(1.4);
 }
 
 .logo-mark {
   color: var(--gold);
+}
+
+/* ===== GRAFFITI BACKGROUND LAYER ===== */
+/* Scattered wildstyle tags + splatters, positioned behind every section on
+   the page (not a repeating tile) so it reads like real graffiti placement.
+   .site must be position:relative for these percentage positions to track
+   the full page height. */
+.site {
+  position: relative;
+}
+
+.graffiti-layer {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.gtag {
+  position: absolute;
+  opacity: 0.9;
+}
+
+@media (max-width: 700px) {
+  .gtag {
+    opacity: 0.55;
+  }
 }
 
 .nav-links {
@@ -94,30 +126,6 @@
   color: var(--gray);
   letter-spacing: 1px;
   margin-bottom: 24px;
-}
-
-/* ===== GRAFFITI TAG (spray-paint accent) ===== */
-.graffiti-tag {
-  position: absolute;
-  top: 28px;
-  right: 40px;
-  font-family: 'Rubik Wet Paint', cursive;
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  color: var(--gold);
-  opacity: 0.55;
-  transform: rotate(-6deg);
-  text-transform: lowercase;
-  letter-spacing: 1px;
-  pointer-events: none;
-  user-select: none;
-}
-
-@media (max-width: 700px) {
-  .graffiti-tag {
-    top: 16px;
-    right: 20px;
-    font-size: 1.2rem;
-  }
 }
 
 .hero-title {
@@ -391,7 +399,7 @@
 .story {
   padding: 100px 40px;
   border-top: 1px solid var(--line);
-  background: var(--paper);
+  background: rgba(36, 34, 32, 0.82); /* semi-transparent so graffiti layer still reads through */
 }
 
 .story-grid {
