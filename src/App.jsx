@@ -2,37 +2,6 @@ import './App.css'
 import { useState } from 'react'
 import logo from './assets/selph-made-logo.png'
 
-// Reusable wildstyle graffiti tag: dark drop-shadow layer + gradient fill +
-// light highlight outline, for a real 3D bubble-letter look instead of flat color.
-function GraffitiTag({ text, gradientId, colorA, colorB, style }) {
-  return (
-    <svg className="gtag" viewBox="0 0 400 140" style={style} aria-hidden="true">
-      <defs>
-        <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={colorA} />
-          <stop offset="100%" stopColor={colorB} />
-        </linearGradient>
-      </defs>
-      <text x="10" y="96" fontFamily="'Bungee', cursive" fontSize="70" fill="#0A0A0A" opacity="0.55">{text}</text>
-      <text x="4" y="90" fontFamily="'Bungee', cursive" fontSize="70" fill={`url(#${gradientId})`} stroke="#0A0A0A" strokeWidth="4">{text}</text>
-    </svg>
-  )
-}
-
-// Small spray splatter + drip accent to break up the tags with real graffiti texture.
-function GraffitiSplatter({ color, style }) {
-  return (
-    <svg className="gtag" viewBox="0 0 120 160" style={style} aria-hidden="true">
-      <g fill={color}>
-        <circle cx="30" cy="30" r="24" opacity="0.55" />
-        <circle cx="55" cy="15" r="3" /><circle cx="65" cy="35" r="2.5" /><circle cx="15" cy="55" r="2.5" />
-        <circle cx="45" cy="55" r="2" /><circle cx="10" cy="20" r="2" />
-      </g>
-      <path d="M30,52 C28,75 33,95 27,115" stroke={color} strokeWidth="5" strokeLinecap="round" fill="none" opacity="0.7" />
-    </svg>
-  )
-}
-
 const products = [
   { code: 'SM-001', name: 'Heavyweight Hoodie', price: 65, category: 'unisex' },
   { code: 'SM-002', name: 'Essential Tee', price: 30, category: 'unisex' },
@@ -80,19 +49,6 @@ function App() {
 
   return (
     <div className="site">
-
-      {/* GRAFFITI BACKGROUND — scattered throughout the whole page, behind everything */}
-      <div className="graffiti-layer" aria-hidden="true">
-        <GraffitiTag text="SELPH" gradientId="gradA" colorA="#FF3E9A" colorB="#FF8A2B" style={{ top: '4%', left: '2%', width: '260px', transform: 'rotate(-8deg)' }} />
-        <GraffitiTag text="MADE" gradientId="gradB" colorA="#29D6C9" colorB="#3E7BFA" style={{ top: '16%', right: '3%', width: '220px', transform: 'rotate(6deg)' }} />
-        <GraffitiSplatter color="#F5D63D" style={{ top: '2%', right: '18%', width: '80px', transform: 'rotate(10deg)' }} />
-        <GraffitiTag text="SELPH" gradientId="gradC" colorA="#9B5DE5" colorB="#FF3E9A" style={{ top: '48%', left: '4%', width: '190px', transform: 'rotate(-10deg)' }} />
-        <GraffitiSplatter color="#29D6C9" style={{ top: '60%', left: '18%', width: '70px', transform: 'rotate(-15deg)' }} />
-        <GraffitiTag text="MADE" gradientId="gradD" colorA="#F5D63D" colorB="#FF8A2B" style={{ top: '55%', right: '2%', width: '240px', transform: 'rotate(4deg)' }} />
-        <GraffitiTag text="SELPH" gradientId="gradE" colorA="#FF8A2B" colorB="#FF3E9A" style={{ top: '82%', left: '2%', width: '230px', transform: 'rotate(-5deg)' }} />
-        <GraffitiSplatter color="#9B5DE5" style={{ top: '90%', right: '20%', width: '75px', transform: 'rotate(20deg)' }} />
-        <GraffitiTag text="MADE" gradientId="gradF" colorA="#3E7BFA" colorB="#29D6C9" style={{ top: '95%', right: '4%', width: '200px', transform: 'rotate(-6deg)' }} />
-      </div>
 
       {/* TOP TICKER */}
       <div className="ticker">

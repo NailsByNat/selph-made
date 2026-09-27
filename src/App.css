@@ -49,34 +49,6 @@
   color: var(--gold);
 }
 
-/* ===== GRAFFITI BACKGROUND LAYER ===== */
-/* Scattered wildstyle tags + splatters, positioned behind every section on
-   the page (not a repeating tile) so it reads like real graffiti placement.
-   .site must be position:relative for these percentage positions to track
-   the full page height. */
-.site {
-  position: relative;
-}
-
-.graffiti-layer {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.gtag {
-  position: absolute;
-  opacity: 0.9;
-}
-
-@media (max-width: 700px) {
-  .gtag {
-    opacity: 0.55;
-  }
-}
 
 .nav-links {
   display: flex;
@@ -134,6 +106,7 @@
   line-height: 0.85;
   letter-spacing: -4px;
 }
+
 
 .hero-foot {
   display: flex;
@@ -399,7 +372,7 @@
 .story {
   padding: 100px 40px;
   border-top: 1px solid var(--line);
-  background: rgba(36, 34, 32, 0.82); /* semi-transparent so graffiti layer still reads through */
+  background: var(--paper);
 }
 
 .story-grid {
