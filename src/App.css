@@ -49,6 +49,18 @@
   color: var(--gold);
 }
 
+/* ===== ICONIC BOXED WORDMARK ===== */
+/* Plain Concrete Wall dark background, with a small, minimal red
+   "SELPH MADE" box-logo tiled sparsely on top, like a fashion label's
+   repeated bogo print fabric — iconic and understated, not sprawling art. */
+.site {
+  position: relative;
+  background-color: var(--cream);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='220' viewBox='0 0 280 220'><g transform='translate(60,80) rotate(-4)'><rect x='0' y='0' width='160' height='54' fill='%23C21807'/><text x='80' y='35' text-anchor='middle' font-family='Archivo, sans-serif' font-weight='900' font-size='22' fill='%23F2EFE7' letter-spacing='1'>SELPH MADE</text></g></svg>");
+  background-repeat: repeat;
+  background-size: 280px 220px;
+}
 
 .nav-links {
   display: flex;
@@ -87,10 +99,6 @@
   justify-content: center;
   padding: 60px 40px;
   position: relative;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 80px 80px;
 }
 
 .hero-tag {
@@ -372,7 +380,7 @@
 .story {
   padding: 100px 40px;
   border-top: 1px solid var(--line);
-  background: var(--paper);
+  background: rgba(36, 34, 32, 0.82); /* semi-transparent so the wall/wordmark pattern still reads through */
 }
 
 .story-grid {
